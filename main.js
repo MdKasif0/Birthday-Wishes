@@ -661,6 +661,15 @@ window.onload = function() {
         document.querySelector('#start').style.display = 'none'; // Hide start button
         document.querySelector('#cake-holder').style.opacity = 1; // Show cake
         document.querySelector('#instructions').style.opacity = 1; // Show instructions
+
+        // Start playing the audio
+        const audio = document.getElementById('birthday-audio');
+        audio.play().then(() => {
+            console.log('Audio playback started successfully');
+        }).catch(error => {
+            console.error('Audio playback failed:', error);
+        });
+
         audioContext.resume().then(() => {
             console.log('User interacted with the page. Playback resumed successfully');
             init(); // Initialize fireworks
